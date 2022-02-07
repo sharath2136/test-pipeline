@@ -21,9 +21,7 @@ spec:
       imagePullPolicy: Always
       volumeMounts:
         - name: docker
-          mountPath: /var/run # We use the k8s host docker engine
-      securityContext: 
-          privileged: true
+          mountPath: /var/run # We use the k8s host docker engine 
           
   volumes:
     - name: docker
