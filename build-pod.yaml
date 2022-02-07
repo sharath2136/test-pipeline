@@ -22,8 +22,13 @@ spec:
       volumeMounts:
         - name: docker
           mountPath: /var/run/docker.sock # We use the k8s host docker engine
-          type: file
+      securityContext: 
+          allowPrivilegeEscalation: true
+          
   volumes:
     - name: docker
       hostPath:
         path: /var/run/docker.sock
+        type: File
+        
+        
