@@ -16,7 +16,7 @@ spec:
           memory: "1Gi"
           cpu: "500m"
     - name: docker
-      image: docker:18.06.1
+      image: docker:latest
       command: ["tail", "-f", "/dev/null"]
       imagePullPolicy: Always
       volumeMounts:
