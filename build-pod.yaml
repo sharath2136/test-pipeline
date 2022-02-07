@@ -19,18 +19,18 @@ spec:
       image: docker:latest
       command: ["tail", "-f", "/dev/null"]
       imagePullPolicy: Always
-     volumeMounts:
-       - name: nfs
-         mountPath: "/mountpath"
-       - name: dockersock
-         mountPath: "/var/run/docker.sock"
- volumes:
- - name: nfs
-   persistentVolumeClaim:
-     claimName: nfs
- - name: dockersock
-   hostPath:
-     path: /var/run/docker.sock
+    volumeMounts:
+      - name: nfs
+        mountPath: "/mountpath"
+      - name: dockersock
+        mountPath: "/var/run/docker.sock"
+volumes:
+  - name: nfs
+    persistentVolumeClaim:
+      claimName: nfs
+  - name: dockersock
+    hostPath:
+      path: /var/run/docker.sock
         
         
         
